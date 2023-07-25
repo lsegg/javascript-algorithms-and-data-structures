@@ -1,4 +1,4 @@
-## MySQL Bootcamp 📚
+## JavaScript Algorithms and Data Structures 📚
 
 Code accompanying the Udemy course JavaScript Algorithms and Data Structures Masterclass by [Colt Steele](https://www.linkedin.com/in/coltsteele/).
 

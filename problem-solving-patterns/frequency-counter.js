@@ -4,7 +4,7 @@
   The frequency of values must be the same.
 */
 
-// INITIAL NAIVE SOLUTION - 0(n^2)
+// INITIAL NAIVE SOLUTION - 0(n^3)
 function checkArrValues(arr) {
   return !arr.every((element) => {
     return typeof element === "number";
@@ -90,3 +90,70 @@ console.log(same([], [])); // true
 console.log(same([1, 2, 3], "1,4,9")); // null (invalid)
 console.log(same([1, 2, 3, 2], [9, 1, 4, 4])); // true
 console.log(same([1, 2, 3, 2, 5], [9, 1, 4, 4, 11])); // false
+
+// ________________________________________________________________________________________
+
+/*
+  Given two strings, write a function to determine if the second string is an anagram of the first.
+*/
+
+function isAnagram(str1, str2) {
+  str1 = str1.replace(/\s+/g, "").toLowerCase();
+  str2 = str2.replace(/\s+/g, "").toLowerCase();
+  if (str1.length !== str2.length) return false;
+
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let char of str1) {
+    frequencyCounter1[char] = (frequencyCounter1[char] || 0) + 1;
+  }
+  for (let char of str2) {
+    frequencyCounter2[char] = (frequencyCounter2[char] || 0) + 1;
+  }
+
+  if (
+    Object.keys(frequencyCounter1).length !==
+    Object.keys(frequencyCounter2).length
+  )
+    return false;
+
+  for (let key in frequencyCounter1) {
+    if (frequencyCounter2[key] !== frequencyCounter1[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Cleaner solution
+function validAnagram(first, second) {
+  if (first.length !== second.length) {
+    return false;
+  }
+
+  const lookup = {};
+
+  for (let letter of first) {
+    // if letter exists, increment, otherwise set to 1
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+  console.log(lookup);
+
+  for (let letter of second) {
+    // can't find letter or letter is zero then it's not an anagram
+    if (!lookup[letter]) {
+      return false;
+    } else {
+      lookup[letter] -= 1;
+    }
+  }
+
+  return true;
+}
+
+console.log(isAnagram("dusty", "study")); // true
+console.log(isAnagram("three", "apple")); // false
+console.log(isAnagram("sandy", "andy")); // false
+console.log(isAnagram("a gentleman", "elegant man")); // true
+console.log(isAnagram("A decimal point", "Im a dot in place")); // true
+console.log(validAnagram("anagrams", "nagaramm")); // false
