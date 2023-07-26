@@ -91,8 +91,6 @@ console.log(same([1, 2, 3], "1,4,9")); // null (invalid)
 console.log(same([1, 2, 3, 2], [9, 1, 4, 4])); // true
 console.log(same([1, 2, 3, 2, 5], [9, 1, 4, 4, 11])); // false
 
-// ________________________________________________________________________________________
-
 /*
   Given two strings, write a function to determine if the second string is an anagram of the first.
 */
@@ -193,3 +191,38 @@ console.log(sameFrequency(34, 14)); // false
 console.log(sameFrequency(123, 1234)); // false
 console.log(sameFrequency(3589578, 5879385)); // true
 console.log(sameFrequency(22, 222)); // false
+
+/*
+  Implement a function called 'areThereDuplicates' which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
+  You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+  Restrictions:
+    Time - O(n)
+    Space - O(n)
+  Bonus:
+    Time - O(n log n)
+    Space - O(1)
+*/
+
+// Time - O(n) Space - O(n)
+function areThereDuplicates(...args) {
+  let frequencyCounter = {};
+  for (let arg of args) {
+    arg = arg.toString();
+    frequencyCounter[arg] = (frequencyCounter[arg] || 0) + 1;
+    if (frequencyCounter[arg] > 1) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+// Time - O(n log n) Space - O(1)
+function areThereDuplicates() {
+  return new Set(arguments).size !== arguments.length;
+}
+
+console.log(areThereDuplicates(1, 2, 3)); // false
+console.log(areThereDuplicates(1, 2, 2)); // true
+console.log(areThereDuplicates("a", "b", "c", "a")); // true
+console.log(areThereDuplicates("1", 1)); // true??
