@@ -6,6 +6,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
 
 - big O notation
 - problem solving patterns
+- recursion
 
 ## License 📄
 
