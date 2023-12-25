@@ -7,6 +7,10 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
 - big O notation
 - problem solving patterns
 - recursion
+- searching algorithms
+  - linear search
+  - binary search
+  - naive string search
 
 ## License 📄
 
