@@ -15,6 +15,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - bubble sort
   - selection sort
   - insertion sort
+  - merge sort
 
 ## License 📄
 
