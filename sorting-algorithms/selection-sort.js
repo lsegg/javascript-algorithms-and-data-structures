@@ -1,4 +1,9 @@
-//Selection sort (O(n^2))
+/*
+  Selection sort Big O
+  Best: O(n^2)
+  Avg: O(n^2)
+  Worst: O(n^2)
+*/
 
 function swap(arr, idx1, idx2) {
   [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];

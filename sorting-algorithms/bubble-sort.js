@@ -1,4 +1,9 @@
-//Bubble sort (Worst case scenario O(n^2), usually O(n))
+/*
+  Bubble sort Big O
+  Best: O(n)
+  Avg: O(n^2)
+  Worst: O(n^2)
+*/
 
 function swap(arr, idx1, idx2) {
   const temp = arr[idx1];
