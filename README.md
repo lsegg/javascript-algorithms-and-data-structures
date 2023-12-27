@@ -12,6 +12,8 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - binary search
   - naive string search
 - sorting algorithms
+  -bubble sort
+  -selection sort
 
 ## License 📄
 
