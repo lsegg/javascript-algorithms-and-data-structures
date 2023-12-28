@@ -16,6 +16,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - selection sort
   - insertion sort
   - merge sort
+  - quick sort
 
 ## License 📄
 
