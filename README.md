@@ -12,7 +12,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - binary search
   - naive string search
 - sorting algorithms
-  - comparison sorts
+  - comparison sorting
     - bubble sort
     - selection sort
     - insertion sort
@@ -20,6 +20,8 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
     - quick sort
   - integer sorting
     - radix sort
+- data structures
+  - singly linked lists
 
 ## License 📄
 
