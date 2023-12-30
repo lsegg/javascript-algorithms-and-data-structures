@@ -12,11 +12,14 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - binary search
   - naive string search
 - sorting algorithms
-  - bubble sort
-  - selection sort
-  - insertion sort
-  - merge sort
-  - quick sort
+  - comparison sorts
+    - bubble sort
+    - selection sort
+    - insertion sort
+    - merge sort
+    - quick sort
+  - integer sorting
+    - radix sort
 
 ## License 📄
 
