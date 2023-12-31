@@ -1,3 +1,10 @@
+/*SINGLY LINKED LISTS
+  Insertion - O(1)
+  Deletion - Best O(1) worst O(n)
+  Searching - O(n)
+  Accesing - O(n)
+*/
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -17,6 +24,16 @@ class SinglyLinkedList {
     this.head = null;
     this.tail = null;
     this.length = 0;
+  }
+
+  printAsArray() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    console.log(arr);
   }
 
   // adds a new node at the end of the list
@@ -99,6 +116,7 @@ class SinglyLinkedList {
     return true;
   }
 
+  // adds a new node at the index position
   insert(index, value) {
     if (index < 0 || index > this.length) return false;
     if (index === this.length) return !!this.push(value);
@@ -114,6 +132,37 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  // deletes the node at the index position
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === this.length - 1) return !!this.pop();
+    if (index === 0) return !!this.shift();
+
+    let previousNode = this.get(index - 1);
+    const removedNode = this.get(index);
+
+    previousNode.next = removedNode.next;
+
+    this.length--;
+    return removedNode;
+  }
+
+  // reverses the direction of the list
+  reverse() {
+    let current = this.head;
+    this.head = this.tail;
+    this.tail = current;
+    let next = null,
+      previous = null;
+    for (let i = 0; i < this.length; i++) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    return this;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -124,4 +173,6 @@ list.pop();
 list.unshift("Hi :|");
 console.log(list.get(0));
 list.set(1, "Good Morning!");
-console.log(list);
+list.printAsArray();
+list.reverse();
+list.printAsArray();
