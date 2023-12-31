@@ -21,7 +21,7 @@ class SinglyLinkedList {
 
   // adds a new node at the end of the list
   push(value) {
-    let newNode = new Node(value);
+    const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -53,12 +53,75 @@ class SinglyLinkedList {
   }
 
   // deletes the node at the beggining of the list
-  shift() {}
+  shift() {
+    if (!this.head) return undefined;
+    const oldHead = this.head;
+    this.head = oldHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return oldHead;
+  }
+
+  // adds a new node at the beggining of the list
+  unshift(value) {
+    const newNode = new Node(value);
+    const currentHead = this.head;
+    if (!currentHead) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = currentHead;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  //gets the node at the index position
+  get(index) {
+    if (index < 0 || index > this.length) return undefined;
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+
+  //sets the node's value at the index position
+  set(index, value) {
+    let node = this.get(index);
+    if (!node) return false;
+    node.value = value;
+    return true;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(value);
+    if (index === 0) return !!this.unshift(value);
+
+    let beforeNode = this.get(index - 1);
+    let currentNode = this.get(index);
+    let newNode = new Node(value);
+
+    newNode.next = currentNode;
+    beforeNode.next = newNode;
+
+    this.length++;
+    return true;
+  }
 }
 
 let list = new SinglyLinkedList();
 list.push("Hello :)");
 list.push("Goodbye :(");
 list.push("Hello again :D");
-console.log(list.pop());
+list.pop();
+list.unshift("Hi :|");
+console.log(list.get(0));
+list.set(1, "Good Morning!");
 console.log(list);
