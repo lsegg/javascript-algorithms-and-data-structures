@@ -23,6 +23,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
 - data structures
   - singly linked lists
   - doubly linked lists
+  - stacks
 
 ## License 📄
 
