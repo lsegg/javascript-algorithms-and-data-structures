@@ -24,6 +24,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - singly linked lists
   - doubly linked lists
   - stacks
+  - queues
 
 ## License 📄
 
