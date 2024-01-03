@@ -98,7 +98,7 @@ class SinglyLinkedList {
 
   //gets the node at the index position
   get(index) {
-    if (index < 0 || index > this.length) return undefined;
+    if (index < 0 || index >= this.length) return undefined;
     let counter = 0;
     let currentNode = this.head;
     while (counter !== index) {
