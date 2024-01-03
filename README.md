@@ -22,6 +22,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
     - radix sort
 - data structures
   - singly linked lists
+  - doubly linked lists
 
 ## License 📄
 
