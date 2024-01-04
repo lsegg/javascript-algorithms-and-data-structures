@@ -25,6 +25,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - doubly linked lists
   - stacks
   - queues
+  - binary search trees
 
 ## License 📄
 
