@@ -27,6 +27,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - queues
   - binary search trees
   - binary heaps
+  - hash tables
 
 ## License 📄
 
