@@ -1,8 +1,8 @@
-/*HASH TABLES (average case with a good hash)
+/* HASH TABLES (average case with a good hash)
   Insertion - O(1)
   Deletion - O(1)
   Access - O(1)
- */
+*/
 class HashTable {
   constructor(size = 53) { // prime number
     this.keyMap = new Array(size);

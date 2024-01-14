@@ -1,7 +1,7 @@
-/*BINARY SEARCH TREE
+/* BINARY SEARCH TREE
   Insertion - O(1)
   Searching - O(log n) // Best and Avg, worst case not guaranteed
- */
+*/
 
 class Node {
   constructor(value) {
