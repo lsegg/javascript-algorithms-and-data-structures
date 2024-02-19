@@ -29,6 +29,7 @@ Code accompanying the Udemy course JavaScript Algorithms and Data Structures Mas
   - binary heaps
   - hash tables
   - graphs
+- Dijkstra's algorithm
 
 ## License 📄
 
